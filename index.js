@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 });
 
 //Seting
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 3000);
 
 
 //declacion de los MiddelWare

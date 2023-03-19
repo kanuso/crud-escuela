@@ -52,6 +52,6 @@ module.exports={
     getAlumnos,
     getAlumnoById,
     createAlumno,
-    deleteAlumno,
-    updateAlumno
+    updateAlumno,
+    deleteAlumno
 };

@@ -20,16 +20,17 @@ const Alumno = sequelize.define('Alumno',{
         defaultValue:1
     }
 
+
 }, { timestamps: false });
 
  
 
 
+//esto de abajo permite crear la tabla del modelo
 
-
-
-
-
+(async () => {
+  await sequelize.sync({ force: true });
+})();
 
 
 
