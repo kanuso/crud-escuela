@@ -1,7 +1,7 @@
 const {DataTypes} = require ('sequelize');
 const {sequelize} = require ('../database/database');
 
-const Alumno = sequelize.define('Alumno',{
+const Maestro = sequelize.define('Maestro',{
     nombre: {
         type: DataTypes.STRING,
         allowNull: false
@@ -15,6 +15,12 @@ const Alumno = sequelize.define('Alumno',{
         type: DataTypes.STRING,
         allowNull:false
     },
+    materia: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      
+    },
+    
     estado: {
         type:DataTypes.INTEGER,
         defaultValue:1
@@ -34,4 +40,6 @@ const Alumno = sequelize.define('Alumno',{
 
 
 
-module.exports = {Alumno}
+module.exports = {Maestro}
+
+

@@ -21,6 +21,7 @@ app.use(express.json());
 
 //rutas
 app.use(require('./src/routes/alumnos'));
+app.use(require('./src/routes/maestrtos'));
 
 
 //corremos el servidor

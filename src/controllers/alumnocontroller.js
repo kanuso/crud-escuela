@@ -4,7 +4,7 @@ const {Alumno}=require('../modules/alumno');
 const getAlumnos = async (req, res)=>{
     const alumnos = await Alumno.findAll({
         where: {
-            estado: 1
+            estado: 0
         }
     });
     res.json(alumnos);
@@ -15,7 +15,7 @@ async function getAlumnoById(req, res){
     if (alumno){
         res.json(alumno);
     }else {
-        res.satus(404).json({message: 'Alumno no encontrado '});
+        res.status(404).json({message: 'Alumno no encontrado '});
     }
 }
 async function createAlumno (req, res){
@@ -24,12 +24,12 @@ async function createAlumno (req, res){
 }
 
 async function updateAlumno(req, res){
-    const alumno = await Alumno.findByPk(req,params.id);
+    const alumno = await Alumno.findByPk(req.params.id);
     if (alumno){
         await alumno.update(req.body);
         res.json(alumno);
     }else {
-        res.satus(404).json({message: 'Alumno no encontrdo'});      
+        res.status(404).json({message: 'Alumno no encontrdo'});      
     }
 }
 async function deleteAlumno(req,res){
@@ -45,7 +45,7 @@ async function deleteAlumno(req,res){
         });
         res.json({message: 'El alumno fue eliminado'});
     }catch{
-        res.satus(404).json({message:'Alumno no encontrado'})
+        res.status(404).json({message:'Alumno no encontrado'})
     }
 }
 module.exports={
